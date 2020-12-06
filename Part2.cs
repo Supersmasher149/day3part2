@@ -1,18 +1,18 @@
-﻿using System;
+using System;
 
 namespace New_folder__3_
 {
-    class Program
+    class Part2
     {
-        static void Main()
+        public static void Test()
         {
             string[] input = System.IO.File.ReadAllLines("input.txt");
             //Console.WriteLine(input[0]);
 
-            int xmove = 3;
+            int xmove = 1;
             int x = 0;
             int hit = 0;
-
+            
             for (int i = 1; i < input.Length; i++)
             {
                 if (xmove + x >= input[0].Length)
@@ -30,7 +30,6 @@ namespace New_folder__3_
                 //Console.WriteLine(input[i]);
             }
             Console.WriteLine(hit);
-            New_folder__3_.Part2.Test();
         }
     }
 }
