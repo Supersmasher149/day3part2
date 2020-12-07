@@ -4,17 +4,34 @@ namespace New_folder__3_
 {
     class Program
     {
-        string[] input = System.IO.File.ReadAllLines("input.txt");
-        static void Encounter(string[] input, int ymove, int xmove)
+        public static void Encounter(int xmove, int ymove)
         {
+            string[] input = System.IO.File.ReadAllLines("input.txt");
+            //Console.WriteLine(input[0]);
+            //int ymove = 2;
+            //int xmove = 1;
             int x = 0;
             int hit = 0;
-            for (int i = ymove; i < input.Length; i = i + ymove)
+            
+            for (int i = ymove; i < input.Length; i++)
             {
-                if ()
+                if (xmove + x >= input[0].Length)
+                {
+                    x = xmove + x - input[0].Length;
+                }
+                else
+                {
+                    x = xmove + x;
+                }
+                if (input[i][x] == '#')
+                {
+                    hit++;
+                }
+                //Console.WriteLine(input[i]);
             }
+            Console.WriteLine(hit);
         }
-        static void Main()
+               static void Main()
         {
             string[] input = System.IO.File.ReadAllLines("input.txt");
             //Console.WriteLine(input[0]);
@@ -39,8 +56,10 @@ namespace New_folder__3_
                 }
                 //Console.WriteLine(input[i]);
             }
-            Console.WriteLine(hit);
-            New_folder__3_.Part2.Test();
+            //Console.WriteLine(hit);
+            //New_folder__3_.Part2.Test();
+            //New_folder__3_.Program.Encounter();
+            New_folder__3_.Program.Encounter(3, 1);
         }
     }
 }
